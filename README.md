@@ -1,2 +1,3 @@
-# java-features
-Features available in Java of different versions
+# Java features
+
+Features available in Java of different versions.
