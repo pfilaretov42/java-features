@@ -10,8 +10,9 @@ repositories {
 }
 
 dependencies {
-    testImplementation(platform("org.junit:junit-bom:5.9.1"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
+    // all the code in the project is actually a test, so junit added to implementation, not testImplementation
+    implementation(platform("org.junit:junit-bom:5.9.1"))
+    implementation("org.junit.jupiter:junit-jupiter")
 }
 
 tasks.test {

@@ -14,8 +14,10 @@ public class ImmutableCollectionFactory {
         System.out.println("strings = " + strings + " (%s)".formatted(strings.getClass().getName()));
 
         // more than 10 elements is var args method
-        strings = List.of("Bach", "Handel", "Mozart", "Beethoven", "Liszt", "Paganini", "Chopin", "Schubert", "Haydn",
-            "Sviridov", "... and more");
+        strings = List.of(
+            "Bach", "Handel", "Mozart", "Beethoven", "Liszt", "Paganini",
+            "Chopin", "Schubert", "Haydn", "Sviridov", "... and more"
+        );
         System.out.println("strings = " + strings + " (%s)".formatted(strings.getClass().getName()));
 
         // throws UnsupportedOperationException
