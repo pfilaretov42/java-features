@@ -1,4 +1,4 @@
-package pro.filaretov.java10;
+package dev.pfilaretov42.java10;
 
 import java.util.function.Supplier;
 

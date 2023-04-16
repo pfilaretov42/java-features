@@ -1,4 +1,4 @@
-package pro.filaretov.java15.sealed;
+package dev.pfilaretov42.java15.sealed;
 
 /**
  * Sealed class which has no explicit {@code permits} clause, permits inner classes implicitly.

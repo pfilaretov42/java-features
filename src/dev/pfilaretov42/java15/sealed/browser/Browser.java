@@ -1,4 +1,4 @@
-package pro.filaretov.java15.sealed.browser;
+package dev.pfilaretov42.java15.sealed.browser;
 
 /**
  * Abstract sealed class.

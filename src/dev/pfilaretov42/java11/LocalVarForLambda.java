@@ -1,4 +1,4 @@
-package pro.filaretov.java11;
+package dev.pfilaretov42.java11;
 
 import java.util.function.IntFunction;
 

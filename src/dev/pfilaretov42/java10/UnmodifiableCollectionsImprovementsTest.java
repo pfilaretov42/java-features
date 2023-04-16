@@ -1,4 +1,4 @@
-package pro.filaretov.java10;
+package dev.pfilaretov42.java10;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;

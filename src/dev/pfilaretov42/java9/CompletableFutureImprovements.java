@@ -1,4 +1,4 @@
-package pro.filaretov.java9;
+package dev.pfilaretov42.java9;
 
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;

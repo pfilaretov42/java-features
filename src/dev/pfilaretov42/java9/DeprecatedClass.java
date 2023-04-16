@@ -1,4 +1,4 @@
-package pro.filaretov.java9;
+package dev.pfilaretov42.java9;
 
 /**
  * {@link Deprecated} annotation can specify {@code forRemoval} and {@code since} attributes.

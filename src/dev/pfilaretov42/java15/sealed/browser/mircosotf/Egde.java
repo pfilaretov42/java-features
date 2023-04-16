@@ -1,4 +1,4 @@
-package pro.filaretov.java15.sealed.browser.mircosotf;
+package dev.pfilaretov42.java15.sealed.browser.mircosotf;
 
 import pro.filaretov.java15.sealed.browser.Browser;
 

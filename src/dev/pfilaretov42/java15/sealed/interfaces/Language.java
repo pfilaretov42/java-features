@@ -1,4 +1,4 @@
-package pro.filaretov.java15.sealed.interfaces;
+package dev.pfilaretov42.java15.sealed.interfaces;
 
 /**
  * Interface can be sealed.

@@ -1,4 +1,4 @@
-package pro.filaretov.java15;
+package dev.pfilaretov42.java15;
 
 import java.time.LocalDate;
 import java.util.Map;
