@@ -1,10 +1,5 @@
 package dev.pfilaretov42.java5.enumset;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-
-@Getter
-@AllArgsConstructor
 public enum Quote {
     DONT_PANIC("Don't Panic."),
     THE_ANSWER("42"),
@@ -13,4 +8,12 @@ public enum Quote {
     ;
 
     private final String value;
+
+    Quote(String value) {
+        this.value = value;
+    }
+
+    public String getValue() {
+        return value;
+    }
 }
