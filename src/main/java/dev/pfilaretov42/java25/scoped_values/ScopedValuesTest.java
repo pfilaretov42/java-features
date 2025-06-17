@@ -1,4 +1,4 @@
-package dev.pfilaretov42.java25.scopedvalues;
+package dev.pfilaretov42.java25.scoped_values;
 
 import java.lang.ScopedValue;
 
@@ -7,7 +7,6 @@ public class ScopedValuesTest {
     private static final ScopedValue<String> CURRENT_RING_BEARER = ScopedValue.newInstance();
 
     void safeJourney() {
-        // Value is immutable and only available in this scope
         ScopedValue.where(CURRENT_RING_BEARER, "Frodo")
                 .run(this::travelToMordorSafely);
     }
@@ -24,7 +23,7 @@ public class ScopedValuesTest {
     void noJourney() {
         // Not accessible outside the scope, throws NoSuchElementException (ScopedValue not bound):
         String bearer = CURRENT_RING_BEARER.get();
-        System.out.println(bearer + " bears the burden safely");
+        System.out.println(bearer + " bears the burden");
     }
 
     public static void main() {
