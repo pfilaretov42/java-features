@@ -8,43 +8,38 @@ public class UnnamedVariablesAndPatternsTest {
         after(balrog);
     }
 
-    private static void before(Object creature) {
-        // Like being forced to name every orc in Mordor's army
-        try {
-            int rings = forgeNewRing();
-        } catch (RingForgingException e) {  // Never used
-            System.out.println("The fires of Mount Doom failed us!");
-        }
+    private static void before(Object fighter) {
+// Like being forced to name every orc in Mordor's army
+try {
+    int rings = forgeNewRing();
+} catch (RingForgingException e) {  // Never used
+    System.out.println("The fires of Mount Doom failed us!");
+}
 
-        // Pattern matching with unused bindings
-        if (creature instanceof Balrog(String name, int power)) {
-            System.out.println("Fly, you fools!");  // 'name' and 'power' unused
-        }
+// Pattern matching with unused bindings
+if (fighter instanceof Elf(String name, Weapon(String type, int damage))) {  // name and damage unused
+    System.out.println("Armed with: " + type);
+}
     }
 
-    private static void after(Object creature) {
-        // As elegant as Legolas defying gravity
-        try {
-            int _ = forgeNewRing();
-        } catch (RingForgingException _) {  // Clear this is unused
-            System.out.println("The fires of Mount Doom failed us!");
-        }
+    private static void after(Object fighter) {
+// As elegant as Legolas defying gravity
+try {
+    int _ = forgeNewRing();
+} catch (RingForgingException _) {  // Clear this is unused
+    System.out.println("The fires of Mount Doom failed us!");
+}
 
-        // Clean pattern matching
-        if (creature instanceof Balrog(_, _)) {
-            System.out.println("Fly, you fools!");  // No false promises of usage
-        }
+// Clean pattern matching
+if (fighter instanceof Elf(_, Weapon(String type, _))) {
+    System.out.println("Armed with: " + type);
+}
     }
 
     private static int forgeNewRing() {
         return 0;
     }
 
-    public void inspectFighter(Object fighter) {
-        if (fighter instanceof Elf(_, Weapon(String type, _))) {  // name and damage unused
-            System.out.println("Armed with: " + type);
-        }
-    }
 }
 
 record Weapon(String type, int damage) {}
