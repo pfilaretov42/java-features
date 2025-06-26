@@ -1,47 +1,47 @@
 package dev.pfilaretov42.java24.ml_kem;
 
-import javax.crypto.Cipher;
 import javax.crypto.KEM;
 import javax.crypto.SecretKey;
-import java.nio.charset.StandardCharsets;
 import java.security.*;
-import java.util.Base64;
 import java.util.HexFormat;
 
 /**
  * Quantum-Resistant Module-Lattice-Based Key Encapsulation Mechanism Test
  */
 public class MlKemTestByClasses {
-    /**
-     * Simulates full exchange
-     */
+}
+
+/**
+ * The Key Exchange
+ */
+class MiddleEarth {
     public void main() throws GeneralSecurityException {
-        // Step 1: Receiver creates key pair
-        Receiver receiver = new Receiver();
+        // Elrond prepares his runes of protection (Receiver creates key pair)
+        Receiver elrond = new Receiver();
 
-        // Step 2: Sender uses receiver's public key to encapsulate session key
-        Sender sender = new Sender(receiver.getPublicKey());
-        SecretKey senderSessionKey = sender.getSessionKey();
+        // Gandalf crafts a secret using Elrond’s rune (Sender uses receiver's public key to encapsulate session key)
+        Sender gandalf = new Sender(elrond.revealPublicRune());
+        SecretKey senderSessionKey = gandalf.getSessionKey();
 
-        // Step 3: Receiver decapsulates to get the same session key
-        SecretKey receiverSessionKey = receiver.decapsulate(sender.getKeyEncapsulationMessage());
+        // Elrond deciphers the sealed whisper from Gandalf (Receiver decapsulates to get the same session key)
+        SecretKey receiverSessionKey = elrond.decapsulateWhisper(gandalf.getSealedWhisper());
         boolean secretsMatch = MessageDigest.isEqual(senderSessionKey.getEncoded(), receiverSessionKey.getEncoded());
 
-        // Output for verification
+        // Output for verification:
         HexFormat hex = HexFormat.of();
         System.out.println("Sender session key:   " + hex.formatHex(senderSessionKey.getEncoded()));
         System.out.println("Receiver session key: " + hex.formatHex(receiverSessionKey.getEncoded()));
         System.out.println("Secrets match: " + secretsMatch);
 
         if (secretsMatch) {
-            // sender and receiver exchange messages using the securely transmitted session key
+            // Gandalf and Elrond exchange messages using the securely transmitted session key
+            // ...
         }
-
     }
 }
 
 /**
- * Generates key pair and decapsulates session key
+ * Receiver generates key pair and decapsulates session key
  */
 class Receiver {
     private final KeyPair keyPair;
@@ -51,23 +51,23 @@ class Receiver {
         this.keyPair = generator.generateKeyPair();
     }
 
-    public PublicKey getPublicKey() {
+    public PublicKey revealPublicRune() {
         return keyPair.getPublic();
     }
 
-    public SecretKey decapsulate(byte[] keyEncapsulationMessage) throws GeneralSecurityException {
+    public SecretKey decapsulateWhisper(byte[] sealedWhisper) throws GeneralSecurityException {
         KEM kem = KEM.getInstance("ML-KEM");
         KEM.Decapsulator decapsulator = kem.newDecapsulator(keyPair.getPrivate());
-        return decapsulator.decapsulate(keyEncapsulationMessage);
+        return decapsulator.decapsulate(sealedWhisper);
     }
 }
 
 /**
- * Uses receiver's public key to generate session key
+ * Sender uses receiver's public key to generate session key
  */
 class Sender {
-    private final SecretKey sessionKey;
-    private final byte[] keyEncapsulationMessage;
+    private final SecretKey sessionKey; // Sender’s secret session key
+    private final byte[] sealedWhisper; // The message with session key encapsulated for Receiver
 
     public Sender(PublicKey receiverPublicKey) throws GeneralSecurityException {
         KEM kem = KEM.getInstance("ML-KEM");
@@ -75,14 +75,14 @@ class Sender {
         KEM.Encapsulated encapsulated = encapsulator.encapsulate();
 
         this.sessionKey = encapsulated.key();
-        this.keyEncapsulationMessage = encapsulated.encapsulation();
+        this.sealedWhisper = encapsulated.encapsulation();
     }
 
     public SecretKey getSessionKey() {
         return sessionKey;
     }
 
-    public byte[] getKeyEncapsulationMessage() {
-        return keyEncapsulationMessage;
+    public byte[] getSealedWhisper() {
+        return sealedWhisper;
     }
 }
