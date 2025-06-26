@@ -12,7 +12,7 @@ public class MlKemTestByClasses {
 }
 
 /**
- * The Key Exchange
+ * The Session Key Exchange
  */
 class MiddleEarth {
     public void main() throws GeneralSecurityException {
