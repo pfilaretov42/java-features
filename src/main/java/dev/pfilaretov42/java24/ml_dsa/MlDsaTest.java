@@ -1,6 +1,5 @@
 package dev.pfilaretov42.java24.ml_dsa;
 
-import java.nio.charset.StandardCharsets;
 import java.security.*;
 
 public class MlDsaTest {
