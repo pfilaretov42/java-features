@@ -28,6 +28,6 @@ public class ElvenScrollAfter {
             System.out.println("Runes counted: " + runeCount);
         }
         // Memory automatically freed here - no memory leaks!
-        // no native code!
+        // No native code!
     }
 }
