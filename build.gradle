@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+group = 'dev.pfilaretov42'
+version = '1.0'
+
+//java {
+//    toolchain {
+//        languageVersion = JavaLanguageVersion.of(24)
+//    }
+//}
+
+subprojects {
+    repositories {
+        mavenCentral()
+    }
+
+//    tasks.withType(JavaCompile).configureEach {
+//        options.compilerArgs += ['--enable-preview']
+//    }
+}

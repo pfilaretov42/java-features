@@ -1,7 +1,6 @@
 package dev.pfilaretov42.java21;
 
 import java.util.List;
-import java.util.stream.Stream;
 
 public class Java17To21VersionDiff {
     public static void main(String[] args) {

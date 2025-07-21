@@ -1,9 +1,6 @@
 package dev.pfilaretov42.java15;
 
 
-import dev.pfilaretov42.java15.sealed.browser.Browser;
-import dev.pfilaretov42.java15.sealed.browser.Crohm;
-
 /**
  * Switch as an expression
  */
