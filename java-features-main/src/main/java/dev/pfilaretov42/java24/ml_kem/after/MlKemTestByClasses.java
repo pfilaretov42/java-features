@@ -1,4 +1,4 @@
-package dev.pfilaretov42.java24.ml_kem;
+package dev.pfilaretov42.java24.ml_kem.after;
 
 import javax.crypto.KEM;
 import javax.crypto.SecretKey;
@@ -9,34 +9,32 @@ import java.util.HexFormat;
  * Quantum-Resistant Module-Lattice-Based Key Encapsulation Mechanism Test
  */
 public class MlKemTestByClasses {
-}
 
-/**
- * The Session Key Exchange
- */
-class MiddleEarth {
+    /**
+     * The Session Key Exchange
+     */
     public void main() throws GeneralSecurityException {
-// Elrond prepares his runes of protection (Receiver creates key pair)
-ElrondTheReceiver elrond = new ElrondTheReceiver();
+        // Elrond prepares his runes of protection (Receiver creates key pair)
+        ElrondTheReceiver elrond = new ElrondTheReceiver();
 
-// Gandalf crafts a secret using Elrond’s rune (Sender uses receiver's public key to encapsulate session key)
-GandalfTheSender gandalf = new GandalfTheSender(elrond.revealPublicRune());
-SecretKey senderSessionKey = gandalf.getSessionKey();
+        // Gandalf crafts a secret using Elrond’s rune (Sender uses receiver's public key to encapsulate session key)
+        GandalfTheSender gandalf = new GandalfTheSender(elrond.revealPublicRune());
+        SecretKey senderSessionKey = gandalf.getSessionKey();
 
-// Elrond deciphers the sealed whisper from Gandalf (Receiver decapsulates to get the same session key)
-SecretKey receiverSessionKey = elrond.decapsulateWhisper(gandalf.getSealedWhisper());
-boolean secretsMatch = MessageDigest.isEqual(senderSessionKey.getEncoded(), receiverSessionKey.getEncoded());
+        // Elrond deciphers the sealed whisper from Gandalf (Receiver decapsulates to get the same session key)
+        SecretKey receiverSessionKey = elrond.decapsulateWhisper(gandalf.getSealedWhisper());
+        boolean secretsMatch = MessageDigest.isEqual(senderSessionKey.getEncoded(), receiverSessionKey.getEncoded());
 
-// Output for verification:
-HexFormat hex = HexFormat.of();
-System.out.println("Sender session key:   " + hex.formatHex(senderSessionKey.getEncoded()));
-System.out.println("Receiver session key: " + hex.formatHex(receiverSessionKey.getEncoded()));
-System.out.println("Secrets match: " + secretsMatch);
+        // Output for verification:
+        HexFormat hex = HexFormat.of();
+        System.out.println("Sender session key:   " + hex.formatHex(senderSessionKey.getEncoded()));
+        System.out.println("Receiver session key: " + hex.formatHex(receiverSessionKey.getEncoded()));
+        System.out.println("Secrets match: " + secretsMatch);
 
-if (secretsMatch) {
-    // Gandalf and Elrond exchange messages using the securely transmitted session key
-    // ...
-}
+        if (secretsMatch) {
+            // Gandalf and Elrond exchange messages using the securely transmitted session key
+            // ...
+        }
     }
 }
 

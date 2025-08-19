@@ -1,6 +1,11 @@
 package dev.pfilaretov42.java25.module_import_declarations;
 
-import module elves.of.lothlorien;
+// TODO - gradle fails with "imported module not found", fix it
+//import module elves.of.lothlorien;
+
+import lothlorien.Celeborn;
+import lothlorien.Galadriel;
+import lothlorien.Haldir;
 
 public class FarewellToLórienAfter {
     void main() {
