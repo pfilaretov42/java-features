@@ -49,7 +49,7 @@ class ElrondTheReceiver {
     public ElrondTheReceiver() throws GeneralSecurityException {
         KeyPairGenerator generator = KeyPairGenerator.getInstance("RSA");
         generator.initialize(4096);
-        this.keyPair = generator.generateKeyPair();
+        keyPair = generator.generateKeyPair();
     }
 
     public PublicKey revealPublicRune() {
@@ -76,12 +76,12 @@ class GandalfTheSender {
         // Generate session key (AES)
         KeyGenerator generator = KeyGenerator.getInstance("AES");
         generator.init(256);
-        this.sessionKey = generator.generateKey();
+        sessionKey = generator.generateKey();
 
         // Encrypt (encapsulate) session key with RSA
         Cipher cipher = Cipher.getInstance("RSA/ECB/OAEPWithSHA-256AndMGF1Padding");
         cipher.init(Cipher.ENCRYPT_MODE, receiverPublicKey);
-        this.sealedWhisper = cipher.doFinal(sessionKey.getEncoded());
+        sealedWhisper = cipher.doFinal(sessionKey.getEncoded());
     }
 
     public SecretKey getSessionKey() {

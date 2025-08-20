@@ -46,7 +46,7 @@ class ElrondTheReceiver {
 
     public ElrondTheReceiver() throws GeneralSecurityException {
         KeyPairGenerator generator = KeyPairGenerator.getInstance("ML-KEM");
-        this.keyPair = generator.generateKeyPair();
+        keyPair = generator.generateKeyPair();
     }
 
     public PublicKey revealPublicRune() {
@@ -72,8 +72,8 @@ class GandalfTheSender {
         KEM.Encapsulator encapsulator = kem.newEncapsulator(receiverPublicKey);
         KEM.Encapsulated encapsulated = encapsulator.encapsulate();
 
-        this.sessionKey = encapsulated.key();
-        this.sealedWhisper = encapsulated.encapsulation();
+        sessionKey = encapsulated.key();
+        sealedWhisper = encapsulated.encapsulation();
     }
 
     public SecretKey getSessionKey() {
