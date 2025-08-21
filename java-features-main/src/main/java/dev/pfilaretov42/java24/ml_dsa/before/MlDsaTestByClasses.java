@@ -30,6 +30,9 @@ public class MlDsaTestByClasses {
     }
 }
 
+/**
+ * Sender signs message with private key
+ */
 class GandalfTheSender {
     private final KeyPair keyPair;
 
@@ -59,7 +62,9 @@ class GandalfTheSender {
     }
 }
 
-
+/**
+ * Receiver verifies the message with public key
+ */
 class AragornTheReceiver {
     private final PublicKey senderPublicKey;
 
