@@ -5,7 +5,7 @@ import java.lang.invoke.MethodHandle;
 
 public class ElvenScrollAfter {
 
-    void main() throws Throwable {
+    public static void main() throws Throwable {
         // Now, like the Elven bridges of Lothlórien - elegant and secure
 
         // Get a linker and a lookup object

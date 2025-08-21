@@ -9,7 +9,7 @@ public class ElvenScrollBefore {
     // Declare the native spell that reads the length of ancient text
     public native int countRunes(String ancientText);
 
-    void main() {
+    public static void main() {
         ElvenScrollBefore scroll = new ElvenScrollBefore();
         String runes = "Speak, friend, and enter";
         int length = scroll.countRunes(runes);
