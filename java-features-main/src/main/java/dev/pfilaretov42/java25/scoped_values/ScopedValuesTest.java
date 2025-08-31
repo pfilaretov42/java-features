@@ -17,7 +17,7 @@ public class ScopedValuesTest {
         System.out.println(bearer + " bears the burden safely");
 
         // Attempting to rebind would result in compilation error:
-        //currentRingBearer.set("Sam");
+        //CURRENT_RING_BEARER.set("Sam");
     }
 
     void noJourney() {
