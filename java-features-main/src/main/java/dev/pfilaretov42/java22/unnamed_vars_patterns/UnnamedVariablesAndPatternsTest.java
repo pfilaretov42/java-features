@@ -1,7 +1,6 @@
 package dev.pfilaretov42.java22.unnamed_vars_patterns;
 
 public class UnnamedVariablesAndPatternsTest {
-    // TODO - run, check, and copy to the post
     public static void main() {
         var balrog = new Balrog("Durin's Bane", 1000);
         before(balrog);
@@ -9,31 +8,31 @@ public class UnnamedVariablesAndPatternsTest {
     }
 
     private static void before(Object fighter) {
-// Like being forced to name every orc in Mordor's army
-try {
-    int rings = forgeNewRing();
-} catch (RingForgingException e) {  // Never used
-    System.out.println("The fires of Mount Doom failed us!");
-}
+        // Like being forced to name every orc in Mordor's army
+        try {
+            int rings = forgeNewRing();
+        } catch (RingForgingException e) {  // Never used
+            System.out.println("The fires of Mount Doom failed us!");
+        }
 
-// Pattern matching with unused bindings
-if (fighter instanceof Elf(String name, Weapon(String type, int damage))) {  // name and damage unused
-    System.out.println("Armed with: " + type);
-}
+        // Pattern matching with unused bindings
+        if (fighter instanceof Elf(String name, Weapon(String type, int damage))) {  // name and damage unused
+            System.out.println("Armed with: " + type);
+        }
     }
 
     private static void after(Object fighter) {
-// As elegant as Legolas defying gravity
-try {
-    int _ = forgeNewRing();
-} catch (RingForgingException _) {  // Clear this is unused
-    System.out.println("The fires of Mount Doom failed us!");
-}
+        // As elegant as Legolas defying gravity
+        try {
+            int _ = forgeNewRing();
+        } catch (RingForgingException _) {  // Clear this is unused
+            System.out.println("The fires of Mount Doom failed us!");
+        }
 
-// Clean pattern matching
-if (fighter instanceof Elf(_, Weapon(String type, _))) {
-    System.out.println("Armed with: " + type);
-}
+        // Clean pattern matching
+        if (fighter instanceof Elf(_, Weapon(String type, _))) {
+            System.out.println("Armed with: " + type);
+        }
     }
 
     private static int forgeNewRing() {
@@ -42,9 +41,11 @@ if (fighter instanceof Elf(_, Weapon(String type, _))) {
 
 }
 
-record Weapon(String type, int damage) {}
+record Weapon(String type, int damage) {
+}
 
-record Elf(String name, Weapon weapon) {}
+record Elf(String name, Weapon weapon) {
+}
 
 record Balrog(String name, int power) {
 }
